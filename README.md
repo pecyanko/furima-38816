@@ -17,7 +17,6 @@
 ###Association
 - has_many :items
 - has_many :orders
-- has_one :address
 
 
 
@@ -30,10 +29,10 @@
 | category_id     | integer       | null: false                    |
 | condition_id    | integer       | null: false                    |
 | charge_id       | integer       | null: false                    |
-| address_id      | integer       | null: false                    |
+| prefecture_id   | integer       | null: false                    |
 | delivery_day_id | integer       | null: false                    |
 | cost            | integer       | null: false                    |
-| user_id         | references    | null: false, foreign_key: true |
+| user            | references    | null: false, foreign_key: true |
 
 ###Association
 - belongs_to :user
@@ -41,20 +40,19 @@
 
 
 
-##addressテーブル
+##addressesテーブル
 
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
-| postal_code   | references | null: false |
-| prefecture_id | references | null: false |
-| city          | references | null: false |
-| block         | references | null: false |
-| building      | references |             |
-| phone_number  | references | null: false |
-| name          | references | null: false |
+| postal_code   | integer    | null: false |
+| prefecture_id | integer    | null: false |
+| city          | text       | null: false |
+| block         | text       | null: false |
+| building      | text       |             |
+| phone_number  | integer    | null: false |
 
 ###Association
-- belongs_to :user
+- belongs_to :order
 
 
 ##
@@ -68,4 +66,5 @@ ordersテーブル
 ###Association
 - belongs_to :item
 - belongs_to :user
+- belongs_to :address
 
