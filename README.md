@@ -42,14 +42,15 @@
 
 ##addressesテーブル
 
-| Column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| postal_code   | integer    | null: false |
-| prefecture_id | integer    | null: false |
-| city          | text       | null: false |
-| block         | text       | null: false |
-| building      | text       |             |
-| phone_number  | integer    | null: false |
+| Column        | Type          | Options                         |
+| ------------- | ------------- | ------------------------------- |
+| postal_code   | string        | null: false                     |
+| prefecture_id | integer       | null: false                     |
+| city          | string        | null: false                     | 
+| block         | string        | null: false                     |
+| building      | string        |                                 |
+| phone_number  | string        | null: false                     |
+| orders        | references    | null: false, foreign_key: true  |
 
 ###Association
 - belongs_to :order
@@ -66,5 +67,5 @@ ordersテーブル
 ###Association
 - belongs_to :item
 - belongs_to :user
-- belongs_to :address
+- has_one :address
 
