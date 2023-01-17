@@ -23,6 +23,11 @@ RSpec.describe User, type: :model do
         @user.first_name_kana = "タロウ"
         expect(@user).to be_valid
       end
+      it "passwordが6文字以上の半角英数字混合であれば登録できる" do
+        @user.password = "000aaa"
+        @user.password_confirmation = "000aaa"
+       expect(@user).to be_valid
+      end
     end
     context '新規登録できない時' do
       it "nick_nameが空だと登録できない" do
