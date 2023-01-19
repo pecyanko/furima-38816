@@ -59,17 +59,17 @@ RSpec.describe Item, type: :model do
       it 'costが¥300~¥9,999,999の範囲外だと登録できない' do
         @item.cost = '100'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Cost Out of setting range")
+        expect(@item.errors.full_messages).to include('Cost Out of setting range')
       end
       it 'costが全角数値だと登録できない' do
         @item.cost = '５００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Cost Half-width number")
+        expect(@item.errors.full_messages).to include('Cost Half-width number')
       end
       it 'costが半角文字だと登録できない' do
         @item.cost = 'aaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Cost Half-width number")
+        expect(@item.errors.full_messages).to include('Cost Half-width number')
       end
     end
   end

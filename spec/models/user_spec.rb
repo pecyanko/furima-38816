@@ -106,7 +106,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Password には英字と数字の両方を含めて設定してください')
       end
 
-
       it 'passwordが5文字以下では登録できない' do
         @user.password = '00000'
         @user.password_confirmation = '00000'
