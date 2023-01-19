@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :Prefecture
+  # belongs_to :Prefecture
   belongs_to :user
   has_one_attached :image
 
@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   validates :delivery_day_id, presence: true
   validates :image, presence: true
   validates :cost, presence: true
-  validates :cost, numericality: { with: /\A[0-9]+\z/, message: 'Half-width number' }
+  validates :cost, numericality: { only_integer: true, message: 'Half-width number' }
   validates :cost,
             numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
 

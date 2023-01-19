@@ -10,7 +10,7 @@ FactoryBot.define do
     prefecture_id    { 2 }
     delivery_day_id  { 2 }
     cost             { Faker::Number.between(from: 300, to: 9_999_999) }
-    user_id { FactoryBot.create(:user).id }
+    association :user
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
