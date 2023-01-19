@@ -32,27 +32,27 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Cost can't be blank")
       end
       it 'categoryが[---]を選択していると登録できない' do
-        @item.category_id = '---'
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'conditionが[---]を選択していると登録できない' do
-        @item.condition_id = '---'
+        @item.condition_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it 'chargeが[---]を選択していると登録できない' do
-        @item.charge_id = '---'
+        @item.charge_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Charge can't be blank")
       end
       it 'prefectureが[---]を選択していると登録できない' do
-        @item.prefecture_id = '---'
+        @item.prefecture_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
       it 'delivery_dayが[---]を選択していると登録できない' do
-        @item.delivery_day_id = '---'
+        @item.delivery_day_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery day can't be blank")
       end
