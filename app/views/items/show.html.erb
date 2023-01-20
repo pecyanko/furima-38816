@@ -16,10 +16,10 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        ¥ 999,999,999
+        <%= "¥#{@item.cost}" %>
       </span>
       <span class="item-postage">
-        <%= "配送料負担" %>
+        <%= Charge.find(@item.charge_id).name %>
       </span>
     </div>
 
@@ -36,7 +36,7 @@
     <% end %>
 
     <div class="item-explain-box">
-      <span><%= "商品説明" %></span>
+      <span><%= @item.introduction %></span>
     </div>
     <table class="detail-table">
       <tbody>
@@ -101,9 +101,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
   <a href="#" class="another-item"><%= @item.category_id %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
 
