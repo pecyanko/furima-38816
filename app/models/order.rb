@@ -4,5 +4,6 @@ class Order < ApplicationRecord
   belongs_to :user, optional: true
 
   attr_accessor :token
+
   has_one :address
 end

@@ -43,7 +43,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'postal_codeが[3桁ハイフン4桁]以外だと登録できない' do
         @order_address.postal_code = '8888888'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+        expect(@order_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
       end
       it 'nameが空だと登録できない' do
         @order_address.postal_code = ''
@@ -53,12 +53,12 @@ RSpec.describe OrderAddress, type: :model do
       it 'phone_numberが半角数字以外だと登録できない' do
         @order_address.phone_number = '０８０１１１１２２２２'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number  is invalid. Input only number")
+        expect(@order_address.errors.full_messages).to include('Phone number  is invalid. Input only number')
       end
       it 'phone_numberが10桁以下だと登録できない' do
         @order_address.phone_number = '0801111'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number is too short")
+        expect(@order_address.errors.full_messages).to include('Phone number is too short')
       end
       it 'item_idが空だと登録できない' do
         @order_address.item_id = ''

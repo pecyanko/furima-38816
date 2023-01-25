@@ -39,7 +39,7 @@ RSpec.describe Address, type: :model do
       it 'postal_codeが[3桁ハイフン4桁]以外だと登録できない' do
         @address.postal_code = '8888888'
         @address.valid?
-        expect(@address.errors.full_messages).to include("Is invalid. Include hyphen(-)")
+        expect(@address.errors.full_messages).to include('Is invalid. Include hyphen(-)')
       end
       it 'nameが空だと登録できない' do
         @address.postal_code = ''
@@ -49,12 +49,12 @@ RSpec.describe Address, type: :model do
       it 'phone_numberが半角数字以外だと登録できない' do
         @address.phone_number = '０８０１１１１２２２２'
         @address.valid?
-        expect(@address.errors.full_messages).to include("Is invalid. Input only number")
+        expect(@address.errors.full_messages).to include('Is invalid. Input only number')
       end
       it 'phone_numberが10桁以下だと登録できない' do
         @address.phone_number = '0801111'
         @address.valid?
-        expect(@address.errors.full_messages).to include("Is too short")
+        expect(@address.errors.full_messages).to include('Is too short')
       end
     end
   end
