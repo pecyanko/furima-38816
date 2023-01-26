@@ -9,8 +9,6 @@ FactoryBot.define do
     block             { 1111 }
     building          { 1111 }
     phone_number      { '09012345678' }
-    user_id           { 1 }
-    item_id           { 1 }
     token             { 'tok_abcdefghijk00000000000000000' }
   end
 end
